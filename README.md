@@ -2,7 +2,7 @@
 Estudando programação dinamica com o curso "Dynamic Programming- Learn to Solve Algorithmic Problems &amp; Coding Challenges" do freeCodeCamp.org]
 
 
-<h2>oq é uma função arbitraria:</h2>
+<h2>O que é uma função arbitraria:</h2>
 Em programação, uma função arbitrária, também conhecida como função de ordem superior ou higher-order function, é uma função que pode receber outras funções como argumentos e/ou retornar funções como resultado. Essa capacidade confere às funções arbitrárias um poder expressivo e flexibilidade significativos, permitindo a criação de código mais modular, reutilizável e abstrato.
 </br>
 <h3>Características principais:</h3>
