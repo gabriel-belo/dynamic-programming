@@ -41,11 +41,13 @@ Observação:
 É possível ter múltiplos casos base em uma função recursiva, cada um correspondendo a uma condição de parada diferente.
 
 
-
+<h2>Complexidade Espacial</h2>
 Em programação, a complexidade espacial de um algoritmo descreve a quantidade de memória que ele utiliza para executar suas tarefas, em função do tamanho da entrada. Em outras palavras, ela avalia o espaço adicional de memória que um algoritmo necessita, além do espaço ocupado pelos dados de entrada.
 
-Como medir a complexidade espacial?
+</br>
 
+Como medir a complexidade espacial?
+</br>
 A complexidade espacial é geralmente expressa usando a notação assintótica Big O, que descreve o crescimento da demanda de memória em relação ao aumento do tamanho da entrada. Por exemplo:
 <ul>
   <li>O(1): Complexidade espacial constante. O algoritmo utiliza uma quantidade fixa de memória, independentemente do tamanho da entrada.</li>
@@ -69,9 +71,11 @@ Fatores que influenciam a complexidade espacial:
 </ul>
 
 Exemplo:
+</br>
 Considere um algoritmo que recebe um array de números inteiros como entrada e retorna a soma de todos os elementos. A complexidade espacial desse algoritmo é O(1), pois ele utiliza apenas algumas variáveis ​​adicionais para armazenar a soma e o índice do array, independentemente do tamanho da entrada.
 
 </br>
+
 Observação:
 A complexidade espacial é apenas um dos aspectos a serem considerados ao analisar a eficiência de um algoritmo. A complexidade de tempo, que descreve o tempo de execução do algoritmo, também é importante.
 </br>
@@ -80,48 +84,59 @@ Em termos de notação Big O, a frase "podemos remover quaisquer constantes mult
 </br>
 
 Para entender melhor, vamos analisar um exemplo:
-
+</br>
 Suponha que um algoritmo leve 2n + 5 passos para ser executado, onde n é o tamanho da entrada. A notação Big O foca em como o tempo de execução cresce em relação ao tamanho da entrada, ignorando os termos que não afetam o crescimento.
-
+</br>
 O termo 2n cresce linearmente com n.
+</br>
 O termo 5 é uma constante e não se altera com o aumento de n.
+</br>
 Na notação Big O, desprezamos as constantes multiplicativas (2, no caso) e os termos de menor ordem (5, no caso). Portanto, a complexidade de tempo desse algoritmo é O(n), indicando um crescimento linear em relação ao tamanho da entrada.
-
 </br>
 
-Por que ignoramos as constantes multiplicativas?
+<h3>Por que ignoramos as constantes multiplicativas?</h3>
+</br>
 A notação Big O descreve o limite assintótico superior do tempo de execução de um algoritmo. Em outras palavras, ela nos diz como o tempo de execução cresce à medida que o tamanho da entrada se torna muito grande.
 </br>
 Quando n é muito grande, as constantes multiplicativas se tornam irrelevantes em comparação com o termo dominante. Por exemplo, se n = 1 bilhão, 2n será muito maior que 5, e a diferença entre 2n e 100n será relativamente pequena.
 </br>
 
-Em resumo:
+<h3>Em resumo:</h3>
 A notação Big O simplifica a análise da complexidade de tempo, permitindo que nos concentremos no fator de crescimento dominante. Ao remover as constantes multiplicativas, podemos comparar algoritmos de forma mais clara e identificar qual deles terá um desempenho melhor para entradas grandes.
 Em análise de algoritmos, O(n) tempo e O(n) espaço são duas formas de expressar a complexidade de um algoritmo, que se referem, respectivamente, ao tempo de execução e à quantidade de memória que um algoritmo utiliza em função do tamanho da entrada (n).
+</br>
 
-O(n) tempo (Complexidade de tempo linear):
+<h3>O(n) tempo (Complexidade de tempo linear):</h3>
 
 Significa que o tempo de execução de um algoritmo cresce linearmente com o tamanho da entrada.
+</br>
 Se o tamanho da entrada dobra, o tempo de execução também dobra (aproximadamente).
+</br>
 Geralmente, algoritmos que percorrem todos os elementos de uma estrutura de dados (como um array ou uma lista) têm complexidade de tempo O(n).
+</br>
 
 Exemplo:
+</br>
 def encontrar_maior(lista):
     maior = lista[0]  # O(1)
     for elemento in lista:  # O(n)
         if elemento > maior:
             maior = elemento  # O(1)
     return maior  # O(1)
+</br>
 Nesse exemplo, a função encontrar_maior percorre a lista uma vez para encontrar o maior elemento. O tempo de execução é dominado pelo loop for, que é executado n vezes, onde n é o tamanho da lista. Portanto, a complexidade de tempo é O(n).
 
-O(n) espaço (Complexidade de espaço linear):
+<h3>O(n) espaço (Complexidade de espaço linear):</h3>
 
 Significa que a quantidade de memória utilizada por um algoritmo cresce linearmente com o tamanho da entrada.
+</br>
 Se o tamanho da entrada dobra, a quantidade de memória utilizada também dobra (aproximadamente).
+</br>
 Geralmente, algoritmos que criam uma nova estrutura de dados com tamanho proporcional à entrada têm complexidade de espaço O(n).
-Exemplo:
+</br>
 
-Python
+Exemplo:
+</br>
 
 def copiar_lista(lista):
     nova_lista = []  # O(1)
@@ -130,7 +145,7 @@ def copiar_lista(lista):
     return nova_lista  # O(1)
 Nesse exemplo, a função copiar_lista cria uma nova lista com os mesmos elementos da lista original. O tamanho da nova lista é proporcional ao tamanho da lista original. Portanto, a complexidade de espaço é O(n).
 
-Observações:
+<h3>Observações:</h3>
 
 A complexidade de tempo e espaço são importantes para avaliar a eficiência de um algoritmo, especialmente quando lidamos com grandes conjuntos de dados.
 É possível ter algoritmos com diferentes combinações de complexidade de tempo e espaço (por exemplo, O(n) tempo e O(1) espaço, ou O(n²) tempo e O(n) espaço).
@@ -138,4 +153,4 @@ Ao escolher um algoritmo, é importante considerar tanto a complexidade de tempo
 Espero que esta explicação detalhada tenha sido útil! Se tiver mais perguntas, sinta-se à vontade para perguntar.
 
 
-Complexidade temporal
+<h3>Complexidade temporal</h3>
