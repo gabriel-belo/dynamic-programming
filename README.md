@@ -79,7 +79,51 @@ Considere um algoritmo que recebe um array de números inteiros como entrada e r
 Observação:
 A complexidade espacial é apenas um dos aspectos a serem considerados ao analisar a eficiência de um algoritmo. A complexidade de tempo, que descreve o tempo de execução do algoritmo, também é importante.
 </br>
-Em termos de notação Big O, a frase "podemos remover quaisquer constantes multiplicativas quando temos uma complexidade de tempo" significa que, ao analisar a eficiência de um algoritmo, podemos ignorar os fatores constantes que multiplicam a função que descreve o tempo de execução.
+
+<h2>Complexidade temporal</h2>
+
+Em ciência da computação, a complexidade temporal de um algoritmo descreve como o tempo de execução desse algoritmo cresce em função do tamanho da entrada. Em outras palavras, ela nos diz como o tempo que um algoritmo leva para executar varia conforme aumentamos a quantidade de dados que ele precisa processar.
+
+<h3>Por que a complexidade temporal é importante?</h3>
+
+Ao escolher um algoritmo para resolver um problema, é fundamental considerar sua complexidade temporal. Isso nos permite prever o desempenho do algoritmo para entradas de tamanhos diferentes e comparar a eficiência de diferentes algoritmos para a mesma tarefa.
+
+<h3>Como medir a complexidade temporal?</h3>
+
+A complexidade temporal é geralmente expressa usando a notação Big O, que descreve o limite superior do crescimento do tempo de execução. A notação Big O ignora constantes multiplicativas e termos de ordem inferior, focando apenas no termo dominante que determina o comportamento assintótico do algoritmo.
+
+Exemplos de complexidade temporal:
+<ul>
+  <li>O(1): Complexidade constante. O tempo de execução não depende do tamanho da entrada.</li>
+  <li>O(log n): Complexidade logarítmica. O tempo de execução cresce logaritmicamente com o tamanho da entrada.</li>
+  <li>O(n): Complexidade linear. O tempo de execução cresce linearmente com o tamanho da entrada.</li>
+  <li>O(n log n): Complexidade linearítmica. O tempo de execução cresce proporcionalmente a n vezes o logaritmo de n.</li>
+  <li>O(n²): Complexidade quadrática. O tempo de execução cresce quadraticamente com o tamanho da entrada.</li>
+  <li>O(2^n): Complexidade exponencial. O tempo de execução cresce exponencialmente com o tamanho da entrada.</li>
+</ul>
+
+<h3>Como determinar a complexidade temporal de um algoritmo?</h3>
+Para determinar a complexidade temporal de um algoritmo, é preciso analisar seu código e identificar as operações que são executadas repetidamente em função do tamanho da entrada. Em seguida, contamos o número de vezes que essas operações são executadas e expressamos esse número em termos de n, o tamanho da entrada.
+
+<h3>Exemplo:</h3>
+<h3>Considere o seguinte algoritmo para encontrar o maior elemento em um array:</h3>
+
+function encontrarMaior(array) {
+  let maior = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] > maior) {
+      maior = array[i];
+    }
+  }
+  return maior;
+}
+
+Esse algoritmo percorre o array uma vez, comparando cada elemento com o maior elemento encontrado até o momento. O número de comparações é proporcional ao tamanho do array, portanto, a complexidade temporal desse algoritmo é O(n).
+
+<h3>Conclusão:</h3>
+A complexidade temporal é uma ferramenta essencial para avaliar a eficiência de algoritmos e escolher o mais adequado para um determinado problema. Ao entender como o tempo de execução de um algoritmo varia com o tamanho da entrada, podemos tomar decisões mais informadas e otimizar o desempenho de nossos programas.
+
+<h2>Em termos de notação Big O, a frase "podemos remover quaisquer constantes multiplicativas quando temos uma complexidade de tempo" significa que, ao analisar a eficiência de um algoritmo, podemos ignorar os fatores constantes que multiplicam a função que descreve o tempo de execução.</h2>
 
 </br>
 
@@ -155,4 +199,4 @@ Ao escolher um algoritmo, é importante considerar tanto a complexidade de tempo
 Espero que esta explicação detalhada tenha sido útil! Se tiver mais perguntas, sinta-se à vontade para perguntar.
 
 
-<h3>Complexidade temporal</h3>
+
