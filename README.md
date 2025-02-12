@@ -137,7 +137,6 @@ Geralmente, algoritmos que criam uma nova estrutura de dados com tamanho proporc
 
 Exemplo:
 </br>
-
 def copiar_lista(lista):
     nova_lista = []  # O(1)
     for elemento in lista:  # O(n)
@@ -148,8 +147,11 @@ Nesse exemplo, a função copiar_lista cria uma nova lista com os mesmos element
 <h3>Observações:</h3>
 
 A complexidade de tempo e espaço são importantes para avaliar a eficiência de um algoritmo, especialmente quando lidamos com grandes conjuntos de dados.
+
 É possível ter algoritmos com diferentes combinações de complexidade de tempo e espaço (por exemplo, O(n) tempo e O(1) espaço, ou O(n²) tempo e O(n) espaço).
+
 Ao escolher um algoritmo, é importante considerar tanto a complexidade de tempo quanto a de espaço, levando em conta os recursos disponíveis e os requisitos do problema.
+
 Espero que esta explicação detalhada tenha sido útil! Se tiver mais perguntas, sinta-se à vontade para perguntar.
 
 
