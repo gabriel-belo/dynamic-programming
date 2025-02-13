@@ -198,5 +198,49 @@ Ao escolher um algoritmo, é importante considerar tanto a complexidade de tempo
 
 Espero que esta explicação detalhada tenha sido útil! Se tiver mais perguntas, sinta-se à vontade para perguntar.
 
+Vamos analisar as duas funções para entender suas complexidades de tempo:
+
+Função bar(num):
+
+def bar(num):
+  if(num <= 1):
+    return 1
+  else:
+    bar(num-1)
+    
+Ocorrências da função: A função bar(num) é chamada recursivamente com um argumento decrescido em 1 (num-1) até que num seja menor ou igual a 1.
+Número de chamadas: Para um valor inicial de num, a função bar será chamada num vezes.
+
+Complexidade de tempo: Como o número de chamadas da função cresce linearmente com o valor de num, a complexidade de tempo da função bar é O(n), onde n é o valor inicial de num.
+
+Função dib(num):
+
+def dib(num):
+  if (num <= 1):
+    return 1
+  else:
+    dib(num -1)
+    dib(num -1)
+    
+Ocorrências da função: A função dib(num) faz duas chamadas recursivas para dib(num-1).
+
+Número de chamadas:
+
+Para dib(1): 1 chamada
+
+Para dib(2): 1 chamada inicial + 2 chamadas de dib(1) = 3 chamadas
+
+Para dib(3): 1 chamada inicial + 2 chamadas de dib(2) = 1 + 2 * 3 = 7 chamadas
+
+Para dib(4): 1 chamada inicial + 2 chamadas de dib(3) = 1 + 2 * 7 = 15 chamadas
+
+Padrão: O número de chamadas cresce exponencialmente com num. Especificamente, o número de chamadas é 2^num - 1.
+
+Complexidade de tempo: Como o número de chamadas da função cresce exponencialmente com o valor de num, a complexidade de tempo da função dib é O(2^n), onde n é o valor inicial de num. No entanto, como a questão menciona O(n²), pode haver um erro na função fornecida ou na expectativa de complexidade. Se a intenção fosse ter O(n²), a função deveria ter uma estrutura diferente, como dois loops aninhados.
+Em resumo:
+
+A função bar(num) tem complexidade de tempo O(n) porque o número de chamadas recursivas cresce linearmente com num.
+A função dib(num) tem complexidade de tempo O(2^n) (e não O(n²)) porque o número de chamadas recursivas cresce exponencialmente com num devido às duas chamadas recursivas.
+
 
 
