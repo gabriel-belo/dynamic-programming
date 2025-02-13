@@ -1,4 +1,4 @@
-# dynamic-programming
+ # dynamic-programming
 Estudando programação dinamica com o curso "Dynamic Programming- Learn to Solve Algorithmic Problems &amp; Coding Challenges" do freeCodeCamp.org]
 
 
@@ -242,5 +242,96 @@ Em resumo:
 A função bar(num) tem complexidade de tempo O(n) porque o número de chamadas recursivas cresce linearmente com num.
 A função dib(num) tem complexidade de tempo O(2^n) (e não O(n²)) porque o número de chamadas recursivas cresce exponencialmente com num devido às duas chamadas recursivas.
 
+<h3>Exemplo:</h3>
+def dib(num):
+  if (num <= 1):
+    return 1
+  else:
+    dib(num -1)
+    dib(num -1)
+
+Neste código a complexidade de tempo é O(2²), já a complexidade de espaço é
+Para fazer a análise da complexidade de espaço pegamnos um cenário da raiz a base e vemos quantos quadros de pilhas temos na pilha de chamadas então removemos os quadros até retornamos em um que terá outro quadro sobrando pós ele.
+
+Sabemos que o número de quadros de pilha que usaremos é realmente apenas a altura da árvore. Então a altura da árvore é n como dissemos antes, significa que nossa profundidade máxima de pilha também é n.
+Então temos no espaço a complexidade vinda da pilha de chamadas.
 
 
+<h2>Vamos analisar a complexidade de espaço da função dib(num):</h2>
+def dib(num):
+  if (num <= 1):
+    return 1
+  else:
+    dib(num -1)
+    dib(num -1)
+Entendendo a complexidade de espaço
+
+A complexidade de espaço de um algoritmo se refere à quantidade de memória que ele utiliza durante sua execução, em função do tamanho da entrada.  Estamos interessados em como a quantidade de memória adicional cresce conforme o tamanho da entrada aumenta.
+
+Análise da função dib(num)
+
+Recursão: A função dib(num) é recursiva, ou seja, ela chama a si mesma.  Cada chamada recursiva adiciona uma nova "camada" à pilha de execução (ou call stack).
+
+Pilha de execução: A pilha de execução armazena informações sobre as funções que estão sendo executadas, incluindo suas variáveis locais e o ponto de retorno. Cada chamada recursiva de dib(num) ocupa espaço na pilha.
+
+Profundidade da recursão: A profundidade da recursão é determinada pelo valor inicial de num.  A cada chamada, num é decrementado em 1. A recursão para quando num chega a 1. Logo, a profundidade máxima da recursão é num.
+
+Espaço utilizado: Cada chamada de dib(num) ocupa um espaço constante na pilha de execução para armazenar as informações da função (variáveis locais, etc.). Como a profundidade máxima da recursão é num, o espaço total utilizado na pilha será proporcional a num.
+
+Conclusão
+
+A complexidade de espaço da função dib(num) é O(n), onde n é o valor inicial de num. Isso significa que a quantidade de memória utilizada pela função cresce linearmente com o tamanho da entrada.
+
+Exemplo:
+
+dib(1): A profundidade da recursão é 1. Espaço utilizado: constante * 1.
+dib(5): A profundidade da recursão é 5. Espaço utilizado: constante * 5.
+dib(100): A profundidade da recursão é 100. Espaço utilizado: constante * 100.
+Perceba que, embora a função faça duas chamadas recursivas dentro do else, a profundidade da pilha é determinada pela maior cadeia de chamadas aninhadas, não pela quantidade de chamadas em um nível específico.  É por isso que a complexidade é O(n) e não O(2^n).  O número total de chamadas é exponencial, mas o espaço usado na pilha é linear porque as chamadas ocorrem sequencialmente, não simultaneamente. Uma vez que uma ramificação da recursão termina, seu espaço na pilha é liberado.
+
+<h2>Exemplo de complexidade de espaço O(n²)</h2>
+Um exemplo clássico de complexidade de espaço O(n²) é a criação de uma matriz quadrada de tamanho n x n.
+
+Código em Python:
+
+def criar_matriz(n):
+  """Cria uma matriz quadrada de tamanho n x n com valores iniciais 0."""
+  matriz = []
+  for i in range(n):
+    linha = []
+    for j in range(n):
+      linha.append(0)
+    matriz.append(linha)
+  return matriz
+
+# Exemplo de uso:
+tamanho = 5
+matriz_5x5 = criar_matriz(tamanho)
+
+# Imprime a matriz (opcional)
+for linha in matriz_5x5:
+  print(linha)
+Explicação da complexidade O(n²):
+
+Estrutura de dados: A função criar_matriz(n) cria uma matriz, que é uma estrutura de dados bidimensional. No caso de uma matriz quadrada, tanto o número de linhas quanto o número de colunas são iguais a n.
+
+Alocação de memória: Para armazenar essa matriz, é necessário alocar espaço para n linhas, e cada linha contém n elementos. Portanto, o número total de elementos na matriz é n * n = n².
+
+Crescimento da memória: Conforme o valor de n (tamanho da matriz) aumenta, a quantidade de memória necessária para armazenar a matriz cresce quadraticamente. Por exemplo:
+
+Se n = 2, a matriz terá 4 elementos (2x2).
+Se n = 10, a matriz terá 100 elementos (10x10).
+Se n = 100, a matriz terá 10.000 elementos (100x100).
+Complexidade de espaço: Como a quantidade de memória utilizada pela matriz cresce proporcionalmente a n², dizemos que a complexidade de espaço da função criar_matriz(n) é O(n²).
+
+Observação:
+
+É importante distinguir complexidade de tempo de complexidade de espaço. Neste exemplo, a criação da matriz envolve dois loops aninhados, o que poderia levar à conclusão de que a complexidade de tempo também é O(n²). No entanto, estamos analisando a quantidade de memória utilizada, não o tempo de execução.
+
+Outros exemplos de complexidade de espaço O(n²):
+
+Matrizes: Qualquer algoritmo que crie e manipule matrizes quadradas de tamanho n terá complexidade de espaço O(n²).
+Tabelas: Estruturas de dados que armazenam informações em formato de tabela, com n linhas e n colunas, também terão complexidade de espaço O(n²).
+Importância da complexidade de espaço:
+
+A complexidade de espaço é um fator importante a ser considerado ao escolher um algoritmo, especialmente quando se lida com grandes conjuntos de dados. Se a complexidade de espaço for muito alta, o algoritmo pode exigir uma quantidade excessiva de memória, o que pode levar a problemas de desempenho ou até mesmo impedir a execução do programa em sistemas com recursos limitados.
