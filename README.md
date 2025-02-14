@@ -1,5 +1,6 @@
  # dynamic-programming
 Estudando programação dinamica com o curso "Dynamic Programming- Learn to Solve Algorithmic Problems &amp; Coding Challenges" do freeCodeCamp.org]
+https://www.freecodecamp.org/portuguese/news/o-que-e-a-notacao-big-o-complexidade-de-tempo-e-de-espaco/
 
 
 <h2>O que é uma função arbitraria:</h2>
