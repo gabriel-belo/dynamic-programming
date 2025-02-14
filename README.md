@@ -335,3 +335,52 @@ Tabelas: Estruturas de dados que armazenam informações em formato de tabela, c
 Importância da complexidade de espaço:
 
 A complexidade de espaço é um fator importante a ser considerado ao escolher um algoritmo, especialmente quando se lida com grandes conjuntos de dados. Se a complexidade de espaço for muito alta, o algoritmo pode exigir uma quantidade excessiva de memória, o que pode levar a problemas de desempenho ou até mesmo impedir a execução do programa em sistemas com recursos limitados.
+
+<h2>Caso em que a notação Big O é O(1):</h2>
+def somar_elementos(lista):
+  soma = 0  # Espaço constante O(1)
+  for elemento in lista:  # Itera sobre a lista, sem alocar espaço adicional
+    soma += elemento
+  return soma
+Nesse caso, a complexidade de espaço é O(1), pois a quantidade de memória utilizada (variável soma) não depende do tamanho da lista de entrada.
+
+
+<h2>Sobnre o exemplo do fib() no vídeo:</h2>
+Analisando apenas a complexidade do tempo, podemos dizer que a complexidade do fib, está em algum lugar entre a função dib() e a função lib(). Isso significa que a complexidade do tempo da função fib() é O(2^n,)
+
+<h2>O que implica a complexidade do tempo ser O(2^n) </h2> 
+Significa que em certos casos repetimos os valores nas subárvores fazendo assim com que seja possível reutilizar certos cálculos.
+
+Programação dinâmica será qualquer instância onde temos um problema maior, neste caso, Fibonacci. E podemos decompô-lo em instâncias menores do mesmo problema, também temos uma estrutura sobreposta.
+Devemos buscar qual padrão na árvore é duplicado.
+Então iremos usar um padrão de programação chamado memorização, a memorização é na verdade uma das estratégias que podemos usar para resolver problemas de programação dinâmica 
+Com amemorização procuramos armazenar alguns subproblemas duplicados. Dessa forma, podemos só pegar os resultados mais tarde.
+
+<h2>Complexidade de Memória: Fibonacci com e sem Memorização</h2>
+A diferença na complexidade de memória entre um algoritmo de Fibonacci com e sem memorização reside na forma como cada abordagem lida com os cálculos repetidos.
+
+Fibonacci sem Memorização
+Recursão Pura: A implementação clássica e recursiva do Fibonacci recalcula os mesmos valores várias vezes.
+Complexidade Exponencial: A árvore de recursão cresce exponencialmente, resultando em muitas chamadas redundantes.
+Memória Limitada: A memória utilizada é determinada pela profundidade da pilha de chamadas recursivas, que é proporcional a n.
+Ineficiência: Para números grandes de n, o algoritmo se torna extremamente lento e pode levar a um estouro de pilha.
+Fibonacci com Memorização
+Armazenamento de Resultados: A técnica de memorização armazena os resultados dos cálculos em um dicionário ou tabela hash.
+Reutilização: Antes de calcular um valor, o algoritmo verifica se ele já foi calculado e, em caso afirmativo, reutiliza o resultado armazenado.
+Complexidade Linear: Cada valor de Fibonacci é calculado apenas uma vez.
+Memória Adicional: Requer memória adicional para armazenar os resultados, resultando em uma complexidade de espaço O(n).
+Eficiência Aprimorada: O algoritmo se torna muito mais rápido, pois evita cálculos repetidos.
+Comparação
+Característica	Fibonacci sem Memorização	Fibonacci com Memorização
+Abordagem	Recursão pura	Programação dinâmica (Top-down)
+Cálculos	Repetidos	Únicos
+Complexidade de Tempo	Exponencial O(2^n)	Linear O(n)
+Complexidade de Espaço	Logarítmica O(log n)	Linear O(n)
+Eficiência	Baixa	Alta
+
+Exportar para as Planilhas
+Observações
+A memorização oferece um compromisso entre tempo e espaço.
+A escolha entre as abordagens depende dos requisitos do problema e dos recursos disponíveis.
+Para valores de n muito grandes, a memorização é essencial para evitar cálculos repetidos e tornar o algoritmo viável.
+Em resumo, a memorização transforma um algoritmo de Fibonacci com complexidade de tempo exponencial em um com complexidade linear, resultando em um uso mais eficiente dos recursos computacionais.
